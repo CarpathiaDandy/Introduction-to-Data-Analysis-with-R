@@ -190,6 +190,9 @@ Write a for loop that iterates from 1 to 7 and prints the **cube** of each numbe
 
 ```{r}
 # Your code here:
+for (variable in 1:7) {
+  message(variable^3)
+}
 ```
 
 
@@ -203,6 +206,9 @@ Use `print()`, `paste0()`, and `nchar()`.
 
 ```{r}
 # Your code here:
+for (col_name in colnames(iris)) {
+  print(paste0(col_name, " (", nchar(col_name), ")"))
+}
 ```
 
 ---
@@ -214,6 +220,11 @@ Use a for loop to simulate flipping a coin **20 times**. Store outcomes (1 = hea
 
 ```{r}
 # Your code here:
+outcomes <- numeric(20)
+for (i in 1:20) {
+  outcomes[i] <- rbinom(1, 1, 0.5) 
+}
+print(outcomes)
 ```
 
 ---
@@ -233,6 +244,13 @@ Use **nested** for loops to build the following 5x5 matrix (shown below). Initia
 
 ```{r}
 # Your code here:
+matrix_5x5 <- matrix(NA, nrow = 5, ncol = 5)
+for (r in 1:5) {
+  for (c in 1:5) {
+    matrix_5x5[r, c] <- abs(r - c)  
+  }
+}
+print(matrix_5x5)
 ```
 
 
@@ -247,6 +265,11 @@ Given a list of names, write a for loop that prints a personalized greeting for 
 names_list <- list("Alice", "Bob", "Charlie", "Diana")
 
 # Your code here:
+names_list <- list("Alice", "Bob", "Charlie", "Diana")
+for (name in names_list) {
+  print(paste("Hello,", name, "!"))
+}
+
 ```
 
 

@@ -197,7 +197,7 @@ unlisted_li
 - **`str(li)`** provides a structured overview of the list.
 
 ```{r}
-str(li)
+#str(li)
 str(unlisted_li)
 ```
 
@@ -220,6 +220,11 @@ Create a list named `my_list` with the following elements:
 
 ```{r}
 # Your code here:
+numbers=c(10, 20, 30, 40, 50)  
+letters_vec=c("a", "b", "c", "d", "e")  
+df_sample <- mtcars[, c("mpg", "cyl")]
+my_list <- list(numbers = numbers, letters_vec = letters_vec, df_sample = df_sample)
+my_list
 ```
 
 
@@ -236,6 +241,9 @@ Using `my_list` from Exercise 1:
 
 ```{r}
 # Your code here:
+my_list["numbers"]
+my_list[["letters_vec"]]
+my_list$df_sample$mpg
 ```
 
 
@@ -252,6 +260,10 @@ Update `my_list` by:
 
 ```{r}
 # Your code here:
+my_list$numbers <- c(my_list$numbers, 60)
+my_list$letters_vec <- c(my_list$letters_vec, "f")
+my_list$df_sample$hp <- mtcars$hp
+my_list
 ```
 
 
@@ -264,6 +276,8 @@ Remove the `letters_vec` element from `my_list`.
 
 ```{r}
 # Your code here:
+my_list$letters_vec=NULL
+my_list
 ```
 
 
@@ -276,6 +290,9 @@ Use `lapply()` to compute the **length** of each element in `my_list`. Then, use
 
 ```{r}
 # Your code here:
+lapply(my_list,length)
+
+sapply(my_list, function(x) if (is.numeric(x)) mean(x) else NA)
 ```
 
 
@@ -288,6 +305,8 @@ Convert `my_list` into a single vector with `unlist()` and assign it to `flatten
 
 ```{r}
 # Your code here:
+flattened_list=unlist(my_list)
+flattened_list
 ```
 
 
@@ -300,6 +319,7 @@ Use `str()` to display the structure of `my_list`.
 
 ```{r}
 # Your code here:
+str(my_list)
 ```
 
 
@@ -315,6 +335,11 @@ Create a nested list named `nested_li` with:
 
 ```{r}
 # Your code here:
+new_list <- list(log_vec = c(TRUE, FALSE, TRUE))
+
+nested_li <- list(my_list, new_list)
+
+print(nested_li)
 ```
 
 
@@ -327,6 +352,7 @@ From `nested_li`, access the `log_vec` vector.
 
 ```{r}
 # Your code here:
+nested_li[[2]]$log_vec
 ```
 
 ---
@@ -342,6 +368,20 @@ Then combine `nested_li` and `additional_li` into a new list `combined_li` using
 
 ```{r}
 # Your code here:
+
+matrix_sample <- matrix(1:9, nrow = 3)
+
+df_additional <- data.frame(
+  Name = c("Alice", "Bob", "Charlie"),
+  Age = c(25, 30, 22)
+)
+
+additional_li <- list(matrix_sample = matrix_sample, df_additional = df_additional)
+
+combined_li <- c(nested_li, additional_li)
+
+combined_li
+
 ```
 
 

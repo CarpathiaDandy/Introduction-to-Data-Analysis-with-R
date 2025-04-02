@@ -160,7 +160,15 @@ Practice is essential to reinforce your understanding of `while` loops in R. Com
 
 ```{r}
 
+random_num <- rnorm(1)
 
+while (TRUE) {
+  random_num <- rnorm(1)  
+  print(random_num)  
+  if (random_num > 1) {
+    break  
+  }
+}
 ```
 
 ### Exercise 2: Skip Negative Numbers
@@ -169,6 +177,18 @@ Practice is essential to reinforce your understanding of `while` loops in R. Com
 
 ```{r}
 
+random_num <- rnorm(1)
+
+while (TRUE) {
+  random_num <- rnorm(1)
+  if (random_num < 0) {
+    next
+  }
+  print(random_num)
+  if (random_num > 1) {
+    break
+  }
+}
 
 ```
 
@@ -178,6 +198,15 @@ Practice is essential to reinforce your understanding of `while` loops in R. Com
 
 ```{r}
 
+product <- 1
+n <- 1
+
+while (product <= 10000000) {
+  n <- n + 1
+  product <- product * n
+}
+
+print(n)
 
 ```
 
@@ -190,6 +219,17 @@ Practice is essential to reinforce your understanding of `while` loops in R. Com
 
 ```{r}
 
+sum_numbers <- 0
+
+while (TRUE) {
+  num <- as.numeric(readline(prompt = "Enter a number: "))
+  if (num < 0) {
+    break
+  }
+  sum_numbers <- sum_numbers + num
+}
+
+print(paste("Sum of all entered numbers:", sum_numbers))
 
 ```
 
@@ -201,6 +241,16 @@ Practice is essential to reinforce your understanding of `while` loops in R. Com
 
 ```{r}
 
+numbers <- numeric()
+cumulative_sum <- 0
+
+while (cumulative_sum <= 5) {
+  num <- runif(1,0,1)
+  numbers <- c(numbers, num)
+  cumulative_sum <- sum(numbers)
+}
+
+print(numbers)
 
 ```
 
@@ -209,7 +259,16 @@ Practice is essential to reinforce your understanding of `while` loops in R. Com
 **Question:** Write a `while` loop that generates random numbers between 0 and 1 using `runif(1)` and stops when a number greater than 0.9 is generated. Print each generated number.
 
 ```{r}
+numbers <- numeric()
+cumulative_sum <- 0
 
+while (num <= 0.9) {
+  num <- runif(1,0,1)
+  numbers <- c(numbers, num)
+  cumulative_sum <- sum(numbers)
+}
+
+print(numbers)
 
 ```
 
@@ -219,6 +278,15 @@ Practice is essential to reinforce your understanding of `while` loops in R. Com
 
 ```{r}
 
+mixed_list <- list(5, "hello", TRUE, 10.5, "world", FALSE)
+
+i <- 1
+while (i <= length(mixed_list)) {
+  if (is.numeric(mixed_list[[i]])) {
+    print(mixed_list[[i]])
+  }
+  i <- i + 1
+}
 
 ```
 
@@ -228,6 +296,14 @@ Practice is essential to reinforce your understanding of `while` loops in R. Com
 
 ```{r}
 
+sum_even <- 0
+num <- 2
+
+while (sum_even <= 100) {
+  sum_even <- sum_even + num
+  print(num)
+  num <- num + 2
+}
 
 ```
 
@@ -237,6 +313,24 @@ Practice is essential to reinforce your understanding of `while` loops in R. Com
 
 ```{r}
 
+secret_number <- 7
+attempts <- 5
+
+while (attempts > 0) {
+  guess <- as.numeric(readline(prompt = "Guess the secret number: "))
+  
+  if (guess == secret_number) {
+    print("Congratulations! You guessed correctly.")
+    break
+  } else {
+    attempts <- attempts - 1
+    print(paste("Incorrect guess. You have", attempts, "attempts left."))
+  }
+}
+
+if (attempts == 0) {
+  print(paste("Sorry! You've used all your attempts. The secret number was", secret_number))
+}
 
 ```
 
@@ -248,6 +342,17 @@ Practice is essential to reinforce your understanding of `while` loops in R. Com
 
 ```{r}
 
+fib_sequence <- c(0, 1)
+
+while (TRUE) {
+  next_fib <- sum(tail(fib_sequence, 2))
+  if (next_fib > 1000) {
+    break
+  }
+  fib_sequence <- c(fib_sequence, next_fib)
+}
+
+print(fib_sequence)
 
 ```
 

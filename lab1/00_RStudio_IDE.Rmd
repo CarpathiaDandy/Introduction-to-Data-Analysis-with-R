@@ -186,7 +186,7 @@ library(ggplot2)
 -   **Using the Console:**
 
 ```{r}
-# update.packages()
+update.packages()
 ```
 
 -   **Using the Packages Pane:**

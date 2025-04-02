@@ -268,6 +268,16 @@ Below are practice tasks to strengthen your I/O skills in R.
 
 ```{r}
 # Your code here:
+library(writexl)
+
+students_df <- data.frame(
+  ID = 1:5,
+  Name = c("Alice", "Bob", "Charlie", "Diana", "Eve"),
+  Score = sample(50:100, 5, replace = TRUE)
+)
+
+write_xlsx(students_df, "students.xlsx")
+
 ```
 
 ---
@@ -281,10 +291,22 @@ Below are practice tasks to strengthen your I/O skills in R.
 
 ```{r}
 # Your code here (writing):
+library(readr)
+
+countries_df <- data.frame(
+  Country = c("USA", "Canada", "Germany", "France", "Australia"),
+  Capital = c("Washington, D.C.", "Ottawa", "Berlin", "Paris", "Canberra"),
+  Population = c(331002651, 37742154, 83783942, 67081000, 25499884)
+)
+
+write_tsv(countries_df, "countries.tsv")
+
 ```
 
 ```{r}
 # Your code here (reading):
+countries_read <- read_tsv("countries.tsv")
+print(countries_read)
 ```
 
 ---

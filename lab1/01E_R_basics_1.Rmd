@@ -291,6 +291,7 @@ Below are some exercises to help you practice. Each exercise is followed by a co
 
 ```{r}
 # Your answer here:
+5^8
 ```
 
 ------------------------------------------------------------------------
@@ -301,6 +302,7 @@ Below are some exercises to help you practice. Each exercise is followed by a co
 
 ```{r}
 # Your answer here:
+numbers=c(16, 40, 85, 41, 54, 19, 56, 97)
 ```
 
 ------------------------------------------------------------------------
@@ -311,6 +313,8 @@ Below are some exercises to help you practice. Each exercise is followed by a co
 
 ```{r}
 # Your answer here:
+names(numbers)=c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug")
+names(numbers)
 ```
 
 ------------------------------------------------------------------------
@@ -321,6 +325,8 @@ Below are some exercises to help you practice. Each exercise is followed by a co
 
 ```{r}
 # Your answer here:
+average=mean(numbers)
+average
 ```
 
 ------------------------------------------------------------------------
@@ -331,6 +337,8 @@ Below are some exercises to help you practice. Each exercise is followed by a co
 
 ```{r}
 # Your answer here:
+over_45=c(numbers>45)
+over_45
 ```
 
 ------------------------------------------------------------------------
@@ -341,6 +349,8 @@ Below are some exercises to help you practice. Each exercise is followed by a co
 
 ```{r}
 # Your answer here:
+numbers_filtered=numbers[over_45]
+numbers_filtered
 ```
 
 ------------------------------------------------------------------------
@@ -351,6 +361,7 @@ Below are some exercises to help you practice. Each exercise is followed by a co
 
 ```{r}
 # Your answer here:
+max(numbers)
 ```
 
 ------------------------------------------------------------------------
@@ -361,6 +372,7 @@ Below are some exercises to help you practice. Each exercise is followed by a co
 
 ```{r}
 # Your answer here:
+min(numbers)
 ```
 
 ------------------------------------------------------------------------
@@ -371,6 +383,7 @@ Below are some exercises to help you practice. Each exercise is followed by a co
 
 ```{r}
 # Your answer here:
+sum(numbers)
 ```
 
 ------------------------------------------------------------------------
@@ -381,6 +394,8 @@ Below are some exercises to help you practice. Each exercise is followed by a co
 
 ```{r}
 # Your answer here:
+sequence=c(seq(1,20,2))
+sequence
 ```
 
 ------------------------------------------------------------------------
@@ -391,6 +406,8 @@ Below are some exercises to help you practice. Each exercise is followed by a co
 
 ```{r}
 # Your answer here:
+vectrordata=c(rep("Data",5))
+vectrordata
 ```
 
 ------------------------------------------------------------------------
@@ -401,6 +418,8 @@ Below are some exercises to help you practice. Each exercise is followed by a co
 
 ```{r}
 # Your answer here:
+combined=c(v1,v2)
+combined
 ```
 
 ------------------------------------------------------------------------
@@ -412,6 +431,8 @@ Below are some exercises to help you practice. Each exercise is followed by a co
 
 ```{r}
 # Your answer here:
+mix_vec=c(3, "abc", TRUE)
+class(mix_vec)
 ```
 
 ------------------------------------------------------------------------
@@ -424,6 +445,9 @@ Below are some exercises to help you practice. Each exercise is followed by a co
 
 ```{r}
 # Your answer here:
+letters_vec=c("A", "B", "C", "D")
+"C" %in% letters_vec
+"X" %in% letters_vec
 ```
 
 ------------------------------------------------------------------------

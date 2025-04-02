@@ -226,6 +226,10 @@ Below are practice exercises to reinforce your understanding of matrices in R.
 
 ```{r}
 # Your answer here:
+A=c(1, 2, 3)
+B=c(4, 5, 6)
+matrixtwovec <- rbind(A, B)
+matrixtwovec
 ```
 
 
@@ -237,6 +241,8 @@ Below are practice exercises to reinforce your understanding of matrices in R.
 
 ```{r}
 # Your answer here:
+matrixthreebythree=matrix(seq(1,9,1),nrow=3,byrow=TRUE)
+matrixthreebythree
 ```
 
 
@@ -248,6 +254,7 @@ Below are practice exercises to reinforce your understanding of matrices in R.
 
 ```{r}
 # Your answer here:
+is.matrix(mat)
 ```
 
 ---
@@ -258,6 +265,8 @@ Below are practice exercises to reinforce your understanding of matrices in R.
 
 ```{r}
 # Your answer here:
+mat2=matrix(seq(1,25,1),nrow=5,byrow = TRUE)
+mat2
 ```
 
 
@@ -274,6 +283,7 @@ Below are practice exercises to reinforce your understanding of matrices in R.
 
 ```{r}
 # Your answer here:
+mat2[2:3,2:3]
 ```
 
 ---
@@ -289,6 +299,7 @@ Below are practice exercises to reinforce your understanding of matrices in R.
 
 ```{r}
 # Your answer here:
+mat2[4:5,4:5]
 ```
 
 ---
@@ -299,6 +310,7 @@ Below are practice exercises to reinforce your understanding of matrices in R.
 
 ```{r}
 # Your answer here:
+sum(mat2)
 ```
 
 
@@ -310,6 +322,8 @@ Below are practice exercises to reinforce your understanding of matrices in R.
 
 ```{r}
 # Your answer here:
+rand_mat=matrix(runif(20, min = 0, max = 1),nrow=4)
+rand_mat
 ```
 
 ---
@@ -320,6 +334,8 @@ Below are practice exercises to reinforce your understanding of matrices in R.
 
 ```{r}
 # Your answer here:
+mat2_transposed=t(mat2)
+mat2_transposed
 ```
 
 
@@ -331,6 +347,11 @@ Below are practice exercises to reinforce your understanding of matrices in R.
 
 ```{r}
 # Your answer here:
+invert_mat=matrix(c(1,2,3,4),nrow=2)
+solved=solve(invert_mat)
+solved
+solved%*% invert_mat
+
 ```
 
 
@@ -352,6 +373,8 @@ You should see:
 
 ```{r}
 # Your answer here:
+det(invert_mat)
+
 ```
 
 

@@ -122,7 +122,7 @@ formal <- function(name = "Piotr", title = "Sir") {
 
 # Calling the function
 formal()                 # "Sir Piotr"
-formal("Isaac Newton")   # "Sir Isaac Newton"
+formal("Isaac Newton","His Excelency")   # "Sir Isaac Newton"
 ```
 
 **Explanation**:\
@@ -152,7 +152,7 @@ var
 ```{r}
 pow_two <- function(input) {
   res <- input ^ 2
-  return(result)
+  return(res)
 }
 
 pow_two(4)    # returns 16
@@ -268,6 +268,12 @@ Create a function that returns the product of two integers.
 
 ```{r}
 # Your code here:
+funk=function(int1,int2){
+  res=int1+int2
+  return(res)
+}
+
+funk(5,4)
 ```
 
 
@@ -280,6 +286,18 @@ A function that takes an integer and a vector of integers, returning `TRUE` if t
 
 ```{r}
 # Your code here:
+check_integer <- function(int, vec) {
+  if (int %in% vec) {
+    return(TRUE)
+  } else {
+    return(FALSE)
+  }
+}
+
+
+check_integer(5, c(1, 2, 3, 4, 5)) 
+check_integer(6, c(1, 2, 3, 4, 5))  
+
 ```
 
 
@@ -292,6 +310,14 @@ A function that takes an integer and a vector of integers, returning how many ti
 
 ```{r}
 # Your code here:
+count_occurrences <- function(int, vec) {
+  return(sum(vec == int))
+}
+
+
+count_occurrences(3, c(1, 2, 3, 4, 3, 5, 3)) 
+count_occurrences(6, c(1, 2, 3, 4, 3, 5, 3)) 
+
 ```
 
 
@@ -304,6 +330,15 @@ We have small bars (1kg) and big bars (5kg). Given an integer of requested kilog
 
 ```{r}
 # Your code here:
+min_bars <- function(requested_kg) {
+  big_bars <- requested_kg %/% 5
+  remaining_kg <- requested_kg %% 5
+  total_bars <- big_bars + remaining_kg
+  return(total_bars)
+}
+
+min_bars(6)
+
 ```
 
 
@@ -316,6 +351,20 @@ Create a function that returns `TRUE` if an integer is prime, else `FALSE`.
 
 ```{r}
 # Your code here:
+is_prime <- function(n) {
+  if (n <= 1) {
+    return(FALSE)
+  }
+  for (i in 2:sqrt(n)) {
+    if (n %% i == 0) {
+      return(FALSE)
+    }
+  }
+  return(TRUE)
+}
+
+is_prime(7)
+
 ```
 
 
@@ -329,6 +378,16 @@ Create a function that calculates the factorial of a number using a `for` loop.
 
 ```{r}
 # Your code here:
+factorial <- function(n) {
+  result <- 1
+  for (i in 1:n) {
+    result <- result * i
+  }
+  return(result)
+}
+
+factorial(5)
+
 ```
 
 
@@ -341,6 +400,12 @@ A function that takes `first_name` and `last_name`, returning a personalized gre
 
 ```{r}
 # Your code here:
+greet <- function(first_name, last_name) {
+  return(paste("Hello,", first_name, last_name, "!"))
+}
+
+greet("John", "Doe")
+
 ```
 
 
@@ -353,6 +418,12 @@ A function that calculates the area of a circle given its radius `r`. The formul
 
 ```{r}
 # Your code here:
+circle_area <- function(r) {
+  return(pi * r^2)
+}
+
+circle_area(5)
+
 ```
 
 
@@ -365,6 +436,12 @@ A function that converts a temperature from Celsius to Fahrenheit using the form
 
 ```{r}
 # Your code here:
+celsius_to_fahrenheit <- function(C) {
+  return(C * 9 / 5 + 32)
+}
+
+celsius_to_fahrenheit(25)
+
 ```
 
 ------------------------------------------------------------------------
@@ -376,6 +453,12 @@ A function that takes a string and returns its length using `nchar()`.
 
 ```{r}
 # Your code here:
+string_length <- function(str) {
+  return(nchar(str))
+}
+
+string_length("Hello, World!")
+
 ```
 
 
